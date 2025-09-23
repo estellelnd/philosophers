@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estellek <estellek@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:03:51 by estellek          #+#    #+#             */
-/*   Updated: 2025/09/02 16:46:14 by estellek         ###   ########.fr       */
+/*   Updated: 2025/09/23 14:42:21 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,22 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	int				nb_philos;
+	int				number_of_philosophers;
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
+	int				number_of_times_each_philosopher_must_eat;
 	int				must_eat;
 	long			start_time;
 	int				someone_died;
 	pthread_mutex_t	print_mutex;
 	pthread_mutex_t	death_mutex;
 	t_fork			*forks;
-	t_philo			*philos;
 }					t_data;
 
 int					ft_atoi(char *str);
+void				check_arguments(int argc, char **argv);
 
-// u_int64_t	get_time(void);
-// int			ft_usleep(useconds_t time);
+// int			ft_usleep(int time);
 
 #endif

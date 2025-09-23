@@ -1,7 +1,8 @@
 NAME           	= philo
 
 SRCS            = main.c	\
-				
+				utils/ft_atoi.c \
+				error_handling_args.c
 
 
 OBJ            = $(SRCS:.c=.o)
