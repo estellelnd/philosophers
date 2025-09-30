@@ -2,7 +2,8 @@ NAME           	= philo
 
 SRCS            = main.c	\
 				utils/ft_atoi.c \
-				error_handling_args.c
+				error_handling_args.c \
+				init_mutex.c
 
 
 OBJ            = $(SRCS:.c=.o)

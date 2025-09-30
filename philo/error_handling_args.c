@@ -6,7 +6,7 @@
 /*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 14:14:07 by elandi            #+#    #+#             */
-/*   Updated: 2025/09/23 15:24:32 by elandi           ###   ########.fr       */
+/*   Updated: 2025/09/30 08:34:24 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,4 @@ void	check_arguments(int argc, char **argv)
 			exit(1);
 		i++;
 	}
-}
-int	check_values(t_data *data)
-{
 }

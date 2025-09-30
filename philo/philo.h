@@ -6,7 +6,7 @@
 /*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:03:51 by estellek          #+#    #+#             */
-/*   Updated: 2025/09/23 14:42:21 by elandi           ###   ########.fr       */
+/*   Updated: 2025/09/30 08:56:32 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ typedef struct s_philo
 }					t_philo;
  */
 
-typedef struct s_fork
-{
-	pthread_mutex_t	mutex;
-}					t_fork;
-
 typedef struct s_philo
 {
 	int				id;
@@ -58,8 +53,8 @@ typedef struct s_philo
 	long			last_meal_time;
 	pthread_t		thread;
 	struct s_data	*data;
-	t_fork			*left_fork;
-	t_fork			*right_fork;
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
 }					t_philo;
 
 typedef struct s_data
@@ -74,11 +69,12 @@ typedef struct s_data
 	int				someone_died;
 	pthread_mutex_t	print_mutex;
 	pthread_mutex_t	death_mutex;
-	t_fork			*forks;
+	pthread_mutex_t	*forks;
 }					t_data;
 
 int					ft_atoi(char *str);
 void				check_arguments(int argc, char **argv);
+void				init_forks(t_data *data);
 
 // int			ft_usleep(int time);
 

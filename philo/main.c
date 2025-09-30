@@ -6,7 +6,7 @@
 /*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:06:37 by estellek          #+#    #+#             */
-/*   Updated: 2025/09/23 15:24:13 by elandi           ###   ########.fr       */
+/*   Updated: 2025/09/30 08:55:55 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	init_values(int argc, char **argv)
 	data->time_to_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
 		data->number_of_times_each_philosopher_must_eat = ft_atoi(argv[5]);
-	printf("number_of_philosophers: %d\n", data->number_of_philosophers);
-	printf("data->time_to_die : %d\n", data->number_of_philosophers);
-	printf("data->time_to_eat: %d\n", data->time_to_eat);
-	printf("data->time_to_sleep: %d\n", data->time_to_sleep);
-	if (data->number_of_philosophers <= 0 || data->time_to_die < 0
-		|| data->time_to_eat < 0 || data->time_to_sleep < 0 || (argc == 6
+	if (data->time_to_die < 0 || data->time_to_eat < 0
+		|| data->time_to_sleep < 0 || (argc == 6
 			&& data->number_of_times_each_philosopher_must_eat <= 0))
 	{
 		free(data);
 		exit(1);
 	}
+	init_forks(data);
+	create_threads(data);
+	free(data->forks);
+	free(data);
 }
 
 int	main(int argc, char **argv)
