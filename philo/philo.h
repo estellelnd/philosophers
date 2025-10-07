@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: estellek <estellek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:03:51 by estellek          #+#    #+#             */
-/*   Updated: 2025/09/30 08:56:32 by elandi           ###   ########.fr       */
+/*   Updated: 2025/10/06 21:59:25 by estellek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,6 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
-
-/* typedef struct s_fork
-{
-	pthread_mutex_t	fork;
-	int				id;
-}					t_fork;
-
-typedef struct s_philo
-{
-	int				id;
-	int				counter_meals;
-	int				counter_philos;
-	bool			dead;
-	bool			full;
-	long			last_meal_time;
-	t_fork			*left_fork;
-	t_fork			*right_fork;
-	pthread_t		thread_id;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				number_of_times_each_philosopher_must_eat;
-}					t_philo;
- */
 
 typedef struct s_philo
 {
@@ -75,7 +51,9 @@ typedef struct s_data
 int					ft_atoi(char *str);
 void				check_arguments(int argc, char **argv);
 void				init_forks(t_data *data);
-
+void				destroy_all(t_data *data);
+void				join_threads(t_data *data);
+void				create_threads(t_data *data);
 // int			ft_usleep(int time);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: estellek <estellek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:06:37 by estellek          #+#    #+#             */
-/*   Updated: 2025/09/30 08:55:55 by elandi           ###   ########.fr       */
+/*   Updated: 2025/10/06 21:51:38 by estellek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	init_values(int argc, char **argv)
 	}
 	init_forks(data);
 	create_threads(data);
+	join_threads(data);
+	destroy_all(data);
 	free(data->forks);
 	free(data);
 }
