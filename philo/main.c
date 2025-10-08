@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estellek <estellek@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:06:37 by estellek          #+#    #+#             */
-/*   Updated: 2025/10/06 21:51:38 by estellek         ###   ########.fr       */
+/*   Updated: 2025/10/08 08:41:02 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_values(int argc, char **argv)
 		exit(1);
 	}
 	init_forks(data);
-	create_threads(data);
+	//fonction a faire pour creer les threads
 	join_threads(data);
 	destroy_all(data);
 	free(data->forks);

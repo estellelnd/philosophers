@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estellek <estellek@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elandi <elandi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:03:51 by estellek          #+#    #+#             */
-/*   Updated: 2025/10/06 21:59:25 by estellek         ###   ########.fr       */
+/*   Updated: 2025/10/08 08:29:13 by elandi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_data
 	int				time_to_sleep;
 	int				number_of_times_each_philosopher_must_eat;
 	int				must_eat;
+	int				end;
 	long			start_time;
 	int				someone_died;
 	pthread_mutex_t	print_mutex;
@@ -54,6 +55,5 @@ void				init_forks(t_data *data);
 void				destroy_all(t_data *data);
 void				join_threads(t_data *data);
 void				create_threads(t_data *data);
-// int			ft_usleep(int time);
 
 #endif
